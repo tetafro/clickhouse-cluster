@@ -22,9 +22,9 @@ Containers will be available in docker network `172.23.0.0/24`
 
 ## Test it
 
-Login to clickhouse01 console
+Login to clickhouse01 console (first node's ports are mapped to localhost)
 ```sh
-clickhouse-client -h 172.23.0.11
+clickhouse-client -h localhost
 ```
 
 Create a test database and table (sharded and replicated)
