@@ -15,6 +15,10 @@ config:
 up:
 	docker-compose up -d
 
+.PHONY: start
+start:
+	docker-compose start
+
 .PHONY: down
 down:
 	docker-compose down
