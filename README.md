@@ -16,9 +16,9 @@ Containers will be available in docker network `172.23.0.0/24`
 | ------------ | -------
 | zookeeper    | 172.23.0.10
 | clickhouse01 | 172.23.0.11
-| clickhouse01 | 172.23.0.12
-| clickhouse01 | 172.23.0.13
-| clickhouse01 | 172.23.0.14
+| clickhouse02 | 172.23.0.12
+| clickhouse03 | 172.23.0.13
+| clickhouse04 | 172.23.0.14
 
 ## Test it
 
