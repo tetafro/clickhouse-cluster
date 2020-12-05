@@ -34,7 +34,7 @@ clickhouse-client -h localhost
 
 Create a test database and table (sharded and replicated)
 ```sql
-CREATE DATABASE company_db ON CLUSTER company_cluster;
+CREATE DATABASE company_db ON CLUSTER 'company_cluster';
 
 CREATE TABLE company_db.events ON CLUSTER 'company_cluster' (
     time DateTime,
