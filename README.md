@@ -20,6 +20,11 @@ Containers will be available in docker network `172.23.0.0/24`
 | clickhouse03 | 172.23.0.13
 | clickhouse04 | 172.23.0.14
 
+## Profiles
+
+- `default` - no password
+- `admin` - password `123`
+
 ## Test it
 
 Login to clickhouse01 console (first node's ports are mapped to localhost)
