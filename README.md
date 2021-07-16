@@ -32,6 +32,11 @@ Login to clickhouse01 console (first node's ports are mapped to localhost)
 clickhouse-client -h localhost
 ```
 
+Or open `clickhouse-client` inside any container
+```sh
+docker exec -it clickhouse01 clickhouse-client -h localhost
+```
+
 Create a test database and table (sharded and replicated)
 ```sql
 CREATE DATABASE company_db ON CLUSTER 'company_cluster';
