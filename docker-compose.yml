@@ -1,6 +1,7 @@
 version: '3.5'
 services:
   zookeeper:
+    platform: linux/amd64
     image: zookeeper:3.5
     container_name: zookeeper
     hostname: zookeeper
@@ -8,7 +9,8 @@ services:
       clickhouse-network:
         ipv4_address: 172.23.0.10
   clickhouse01:
-    image: yandex/clickhouse-server:20.4
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
     container_name: clickhouse01
     hostname: clickhouse01
     networks:
@@ -22,7 +24,8 @@ services:
     depends_on:
       - zookeeper
   clickhouse02:
-    image: yandex/clickhouse-server:20.4
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
     container_name: clickhouse02
     hostname: clickhouse02
     networks:
@@ -33,7 +36,8 @@ services:
     depends_on:
       - zookeeper
   clickhouse03:
-    image: yandex/clickhouse-server:20.4
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
     container_name: clickhouse03
     hostname: clickhouse03
     networks:
@@ -44,7 +48,8 @@ services:
     depends_on:
       - zookeeper
   clickhouse04:
-    image: yandex/clickhouse-server:20.4
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
     container_name: clickhouse04
     hostname: clickhouse04
     networks:
@@ -54,7 +59,30 @@ services:
       - ${PWD}/clickhouse04:/etc/clickhouse-server
     depends_on:
       - zookeeper
-
+  clickhouse05:
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
+    container_name: clickhouse05
+    hostname: clickhouse05
+    networks:
+      clickhouse-network:
+        ipv4_address: 172.23.0.15
+    volumes:
+      - ${PWD}/clickhouse05:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
+  clickhouse06:
+    platform: linux/amd64
+    image: yandex/clickhouse-server:20.10
+    container_name: clickhouse06
+    hostname: clickhouse06
+    networks:
+      clickhouse-network:
+        ipv4_address: 172.23.0.16
+    volumes:
+      - ${PWD}/clickhouse06:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
 networks:
   clickhouse-network:
     name: clickhouse-network

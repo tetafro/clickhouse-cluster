@@ -56,6 +56,16 @@
                     <port>9000</port>
                 </replica>
             </shard>
+            <shard>
+                <replica>
+                    <host>clickhouse05</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse06</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
         </company_cluster>
     </remote_servers>
 
