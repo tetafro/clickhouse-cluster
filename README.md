@@ -74,3 +74,11 @@ Check data from all cluster
 ```sql
 SELECT * FROM company_db.events_distr;
 ```
+
+## Add more nodes
+
+If you need more Clickhouse nodes add them like this:
+
+1. Add replicas/shards to `config.xml` to the block `company/remote_servers/company_cluster`.
+1. Add nodes to `docker-compose.yml`.
+1. Add nodes in `Makefile` in `config` target.
