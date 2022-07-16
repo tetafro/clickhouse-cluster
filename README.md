@@ -2,6 +2,8 @@
 
 Clickhouse cluster with 2 shards and 2 replicas built with docker-compose.
 
+Not for production use.
+
 ## Run
 
 Run single command, and it will copy configs for each node and
@@ -65,7 +67,7 @@ INSERT INTO company_db.events_distr VALUES
     ('2020-01-03 13:00:00', 103, 'view');
 ```
 
-Check data from current shard
+Check data from the current shard
 ```sql
 SELECT * FROM company_db.events;
 ```
@@ -77,8 +79,15 @@ SELECT * FROM company_db.events_distr;
 
 ## Add more nodes
 
-If you need more Clickhouse nodes add them like this:
+If you need more Clickhouse nodes, add them like this:
 
 1. Add replicas/shards to `config.xml` to the block `company/remote_servers/company_cluster`.
 1. Add nodes to `docker-compose.yml`.
 1. Add nodes in `Makefile` in `config` target.
+
+## Teardown
+
+Stop and remove containers
+```sh
+make down
+```
