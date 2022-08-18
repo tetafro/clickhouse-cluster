@@ -91,3 +91,8 @@ Stop and remove containers
 ```sh
 make down
 ```
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
