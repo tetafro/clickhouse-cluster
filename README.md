@@ -93,5 +93,7 @@ make down
 ```
 
 ## if you want leave this cluster,use 
-docker-compose stop 
+```sh
+    docker-compose stop 
+```
 to shutdown this cluster
