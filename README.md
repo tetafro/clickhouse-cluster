@@ -85,15 +85,17 @@ If you need more Clickhouse nodes, add them like this:
 1. Add nodes to `docker-compose.yml`.
 1. Add nodes in `Makefile` in `config` target.
 
+## Start, stop
+
+Start/stop the cluster without removing containers
+```sh
+make start
+make stop
+```
+
 ## Teardown
 
 Stop and remove containers
 ```sh
 make down
 ```
-
-## if you want leave this cluster,use 
-```sh
-    docker-compose stop 
-```
-to shutdown this cluster
