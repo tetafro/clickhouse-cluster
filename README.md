@@ -48,7 +48,7 @@ CREATE TABLE company_db.events ON CLUSTER 'company_cluster' (
     uid  Int64,
     type LowCardinality(String)
 )
-ENGINE = ReplicatedMergeTree('/clickhouse/tables/{cluster}/{shard}/table', '{replica}')
+ENGINE = ReplicatedMergeTree('/clickhouse/tables/{cluster}/{shard}/events', '{replica}')
 PARTITION BY toDate(time)
 ORDER BY (uid);
 
@@ -91,3 +91,9 @@ Stop and remove containers
 ```sh
 make down
 ```
+
+## if you want leave this cluster,use 
+```sh
+    docker-compose stop 
+```
+to shutdown this cluster
