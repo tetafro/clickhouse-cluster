@@ -10,6 +10,7 @@ config:
 	cp users.xml clickhouse02/users.xml
 	cp users.xml clickhouse03/users.xml
 	cp users.xml clickhouse04/users.xml
+	chmod -R 755 clickhouse0*
 
 .PHONY: up
 up:
